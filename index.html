@@ -9,7 +9,7 @@ body, html {
 }
 .bg {
   /* The image used */
-  background-image: url("bg.jpg");
+  background-image: url("img_nature.jpg");
 
   /* Full height */
   height: 100%; 
@@ -21,21 +21,33 @@ body, html {
 }
   
  /* Add styles to the form container */
-.container {
+.announcement_slideshow {
   position: absolute;
   right: 0;
   bottom: 0;
   margin: 20px;
 }
+
+.day_one_two {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 20px;
+}
   
 </style>
 </head>
 <body>
-
 <div class="bg">
-  <div class="container">
-  <iframe src="https://508.commons.hwdsb.on.ca/presentation/announcements/" style="height: 33vh; width: 66vh"></iframe>
+
+  <div class="announcement_slideshow">
+  	<iframe src="https://508.commons.hwdsb.on.ca/presentation/announcements/" style="height: 33vh; width: 66vh"></iframe>
   </div>
+  
+  <div class="day_one_two">
+    <img src="day1.png" style="border-radius: 50%; height:100px; width:100px"/>
+  </div>
+  
 </div>
 
 </body>
