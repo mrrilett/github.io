@@ -46,7 +46,18 @@ body, html {
   
   <div class="day_one_two">
     <img src="day1.png" style="border-radius: 50%; height:200px; width:200px"/>
+    <div id="currentTime"></div>
+    <script>
+      const element = document.getElementById('currentTime');
+      
+      setInterval(function () {
+        const currentDate = new Date();
+        element.innerText = currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds();
+      }, 1000);
+    </script>
   </div>
+  
+  
   
 </div>
 
