@@ -51,6 +51,7 @@ body, html {
   </div>
   
   <div class="dayntime" id="currentTime"></div>
+  
   <script>
   function currentTime() {
   let date = new Date(); 
@@ -75,9 +76,10 @@ body, html {
 
   document.getElementById("clock").innerText = time; 
   let t = setTimeout(function(){ currentTime() }, 1000);
-}
-currentTime();
-                 </script>
+  }
+  
+  currentTime();
+  </script>
     
   
   
