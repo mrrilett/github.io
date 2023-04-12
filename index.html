@@ -72,64 +72,25 @@ body, html
   
   
   <script>
-    /*script for clock*/
-  function currentTime() {
-  let date = new Date(); 
-  let hh = date.getHours();
-  let mm = date.getMinutes();
-  let session = "AM";
-  let onetwo = date.getDate()%2;
-  let dow = date.getDay();
-  
-    /*figure out the time*/
-    
-  if(hh == 0){
-      hh = 12;
-  }
-  if(hh > 12){
-      hh = hh - 12;
-      session = "PM";
-   }
+   /*script for clock*/
+  function updateTime()
+ {
+	// used for grabbing the day of the week
+	var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
-   hh = (hh < 10) ? " " + hh : hh;
-   mm = (mm < 10) ? "0" + mm : mm;
-    
-   let time = hh + ":" + mm + " " + session;
-    
-    /*figure out the day of the week*/
-    if(dow == 0){
-      dow = "Sunday";
-    }
-    if(dow == 1){
-      dow = "Monday";
-    }
-    if(dow == 2){
-      dow = "Tuesday";
-    }
-    if(dow == 3){
-      dow = "Wednesday";
-    }
-    if(dow == 4){
-      dow = "Thursday";
-    }
-    if(dow == 5){
-      dow = "Friday";
-    }
-    if(dow == 6){
-      dow = "Saturday";
-    }
-    
-    /* output the final text*/
+  	var date = new Date();
+	var hours = date.getHours();
+	var minutes = date.getMinutes();
+	var day = date.getDay()
 
-  document.getElementById("currentTime").innerText = 
-    time 
-    + "\n" + dow 
-    + "\n Day " + onetwo; 
-    
-  let t = setTimeout(function(){ currentTime() }, 1000);
+  	document.getElementById("currentTime").innerHTML = hours + ":" + minutes + (hours > 12 ? 'PM' : 'AM')
+	+ "<br>" + days[day-1] + "<br>"
+	+ "Day " + (day % 2 ? '2' : '1');
+
   }
   
-  currentTime();
+  updateTime();
+  setInterval(updateTime, 1000)
   </script>
     
   
