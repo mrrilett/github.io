@@ -65,7 +65,7 @@ body, html {
   let hh = date.getHours();
   let mm = date.getMinutes();
   let session = "AM";
-  let onetwo = date.getDay()%2;
+  let onetwo = date.getDate()%2;
 
   if(hh == 0){
       hh = 12;
@@ -80,7 +80,7 @@ body, html {
     
    let time = hh + ":" + mm + " " + session;
 
-  document.getElementById("currentTime").innerText = time + "\n Day" + onetwo; 
+  document.getElementById("currentTime").innerText = time + "\n Day " + onetwo; 
   let t = setTimeout(function(){ currentTime() }, 1000);
   }
   
