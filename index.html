@@ -63,7 +63,10 @@ body, html {
   let mm = date.getMinutes();
   let session = "AM";
   let onetwo = date.getDate()%2;
-
+  let dow = date.getDay();
+  
+    /*figure out the time*/
+    
   if(hh == 0){
       hh = 12;
   }
@@ -76,8 +79,37 @@ body, html {
    mm = (mm < 10) ? "0" + mm : mm;
     
    let time = hh + ":" + mm + " " + session;
+    
+    /*figure out the day of the week*/
+    if(dow = 0){
+      dow = "Sunday";
+    }
+    if(dow = 1){
+      dow = "Monday";
+    }
+    if(dow = 2){
+      dow = "Tuesday";
+    }
+    if(dow = 3){
+      dow = "Wednesday";
+    }
+    if(dow = 4){
+      dow = "Thursday";
+    }
+    if(dow = 5){
+      dow = "Friday";
+    }
+    if(dow = 6){
+      dow = "Saturday";
+    }
+    
+    /* output the final text*/
 
-  document.getElementById("currentTime").innerText = time + "\n Day " + onetwo; 
+  document.getElementById("currentTime").innerText = 
+    time 
+    + "\n" + dow 
+    + "\n Day " + onetwo; 
+    
   let t = setTimeout(function(){ currentTime() }, 1000);
   }
   
